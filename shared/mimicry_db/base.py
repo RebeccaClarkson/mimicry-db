@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import and_
 
-dbname = 'mimicry'; username = 'pguser'; pw = 'pguser'
+dbname = 'mimicry_db'; username = 'mimic_user'; pw = 'mimic'
 engine_string = 'postgresql://%s:%s@localhost/%s?client_encoding=utf-8' %(username, pw,  dbname)
 engine = create_engine(engine_string, echo=False)
 
