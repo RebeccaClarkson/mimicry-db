@@ -26,7 +26,7 @@ CREATE TABLE ADMISSIONS
   CONSTRAINT adm_hadm_unique UNIQUE (HADM_ID)
 ) ;
 
-\copy ADMISSIONS FROM '/analysis/shared/scripts/db/mimic_csv_files/ADMISSIONS.csv' DELIMITER ',' CSV HEADER NULL ''
+\copy ADMISSIONS FROM '/analysis/shared/data/mimic_csv_files/ADMISSIONS.csv' DELIMITER ',' CSV HEADER NULL ''
 
 DROP TABLE IF EXISTS PATIENTS;
 CREATE TABLE PATIENTS
@@ -43,7 +43,7 @@ CREATE TABLE PATIENTS
 	CONSTRAINT pat_rowid_pk PRIMARY KEY (ROW_ID)
 ) ;
 
-\copy PATIENTS FROM '/analysis/shared/scripts/db/mimic_csv_files/PATIENTS.csv' DELIMITER ',' CSV HEADER NULL ''
+\copy PATIENTS FROM '/analysis/shared/data/mimic_csv_files/PATIENTS.csv' DELIMITER ',' CSV HEADER NULL ''
 
 DROP TABLE IF EXISTS DIAGNOSES_ICD;
 CREATE TABLE DIAGNOSES_ICD
@@ -55,7 +55,7 @@ CREATE TABLE DIAGNOSES_ICD
 	ICD9_CODE VARCHAR(10),
 	CONSTRAINT diagnosesicd_rowid_pk PRIMARY KEY (ROW_ID)
 ) ;
-\copy DIAGNOSES_ICD FROM '/analysis/shared/scripts/db/mimic_csv_files/DIAGNOSES_ICD.csv' DELIMITER ',' CSV HEADER NULL ''
+\copy DIAGNOSES_ICD FROM '/analysis/shared/data/mimic_csv_files/DIAGNOSES_ICD.csv' DELIMITER ',' CSV HEADER NULL ''
 
 DROP TABLE IF EXISTS D_ICD_DIAGNOSES;
 CREATE TABLE D_ICD_DIAGNOSES
@@ -68,4 +68,4 @@ CREATE TABLE D_ICD_DIAGNOSES
 	CONSTRAINT d_icd_diag_rowid_pk PRIMARY KEY (ROW_ID)
 ) ;
 
-\copy D_ICD_DIAGNOSES FROM '/analysis/shared/scripts/db/mimic_csv_files/D_ICD_DIAGNOSES.csv' DELIMITER ',' CSV HEADER NULL ''
+\copy D_ICD_DIAGNOSES FROM '/analysis/shared/data/mimic_csv_files/D_ICD_DIAGNOSES.csv' DELIMITER ',' CSV HEADER NULL ''

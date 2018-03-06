@@ -1,11 +1,12 @@
 import pandas as pd
 from mimicry_db.base import session
 from mimicry_db.patient import Patient
+from mimicry_db.file_path_utils import matched_waveform_summary_filepath 
 
 patient = Patient()
 assert hasattr(patient, 'has_matched_waveform')
 
-matched_records_df = pd.read_csv('/analysis/shared/scripts/db/waveform_data/MIMIC-III_Matched_Summary_data.csv')
+matched_records_df = pd.read_csv(matched_waveform_summary_filepath)
 patients = matched_records_df.Patient.values
 
 def process_patient_list(patient_list):   
