@@ -1,5 +1,4 @@
-Overwrite <i> ADMISSIONS.csv, DIAGNOSES_ICD.csv, D_ICD_DIAGNOSES.csv, </i> and <i> PATIENTS.csv </i> with data from the real MIMIC db. 
-
+Fake data is within these folders of the module:
 ```
 ├── data
 │   ├── mimic_csv_files
@@ -11,7 +10,10 @@ Overwrite <i> ADMISSIONS.csv, DIAGNOSES_ICD.csv, D_ICD_DIAGNOSES.csv, </i> and <
 │       ├── MIMIC-III_Matched_Summary_data.csv
 ```
 
-You will also need to create a csv file called MIMIC-III_Matched_Summary_data.csv based on [MIMIC-III Waveform Database Matched Subset](https://physionet.org/physiobank/database/mimic3wdb/matched/), which has the following structure:
+* Overwrite <i> ADMISSIONS.csv, DIAGNOSES_ICD.csv, D_ICD_DIAGNOSES.csv, </i> and <i> PATIENTS.csv </i> with data from the real MIMIC db. 
+
+
+* You will also need to create a csv file called MIMIC-III_Matched_Summary_data.csv based on [MIMIC-III Waveform Database Matched Subset](https://physionet.org/physiobank/database/mimic3wdb/matched/), which has the following structure:
 
 | patient          | record                 | file       |
 |:-----------------|:-----------------------|-----------:|
