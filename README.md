@@ -8,4 +8,4 @@ As access to the MIMIC III database is restricted, this python package uses fake
      * Installs mimicry_db as a module (via the setup.py file)
      * Starts postgresql
      * Loads the mimic db into postgres from csv files
-     * Adds a column to the patients table (<i> has_matched_waveform </i>) to indicate whether a given patient has an associated waveform.
+     * Adds a column to the patients table (<i>has_matched_waveform</i>) to indicate whether a given patient has an associated waveform.
