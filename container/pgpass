@@ -1,1 +1,1 @@
-localhost:5432:mimicry:pguser:pguser
+localhost:5432:mimicry_db:mimic_user:mimic
