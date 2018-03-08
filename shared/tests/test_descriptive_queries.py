@@ -46,7 +46,7 @@ def test_convert_patient_to_subject_id():
 
 def test_hadm_id_for_subject_overlapping_time():
     subject_id = 1
-    event_time = '2043-03-16 16:05'
+    event_time = '1943-03-16 16:05'
     hadm_id = hadm_id_for_subject_overlapping_time(subject_id, event_time)
     assert hadm_id == 1
 
