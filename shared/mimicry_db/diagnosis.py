@@ -1,9 +1,9 @@
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import ForeignKey
 from mimicry_db.base import Base
 from mimicry_db.base import session
+from sqlalchemy import Column
+from sqlalchemy import ForeignKey
+from sqlalchemy import Integer
+from sqlalchemy import String
 
 class Diagnosis(Base):
     __tablename__ = 'diagnoses_icd'
@@ -19,8 +19,10 @@ class Diagnosis(Base):
         """ For a given icd9 code, return the number of admissions and patients
         diagnosed with this code """
         
-        num_patients = session.query(klass.subject_id).filter(klass.icd9_code==icd9_code).distinct().count()
-        num_admissions = session.query(klass.hadm_id).filter(klass.icd9_code==icd9_code).distinct().count()
+        num_patients = session.query(klass.subject_id).filter(
+                klass.icd9_code==icd9_code).distinct().count()
+        num_admissions = session.query(klass.hadm_id).filter(
+                klass.icd9_code==icd9_code).distinct().count()
         
         return num_patients, num_admissions
 
