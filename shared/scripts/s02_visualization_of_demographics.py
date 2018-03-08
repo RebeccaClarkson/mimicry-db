@@ -19,7 +19,7 @@ grouped = df_no_filenames['icd9_code'].groupby(df_no_filenames['hadm_id']).count
 
 plt.figure()
 ax = plt.subplot(111)
-grouped.hist(color='red'); 
+grouped.hist(color='red', bins=list(range(0, int(max(grouped+1)), 1)), align='left')
 ax.set_xlabel('number of icd9 codes'); ax.set_ylabel('count')
 simplify_borders(ax)
 plt.savefig(script_output_path+ 's02_number_of_icd9_codes_full_df.png', bbox_inches="tight")

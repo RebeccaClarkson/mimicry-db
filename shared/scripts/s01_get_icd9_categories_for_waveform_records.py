@@ -20,7 +20,6 @@ start_time = time.time()
 demographic_info_df = generate_demographic_info_df() 
 
 print("Loaded demographics in %d seconds" % (time.time() - start_time)) 
-print(demographic_info_df.head())
 
 start_time = time.time()
 # Get hadm_ids for all admissions that have waveforms
@@ -28,7 +27,7 @@ subject_timestamp_df['hadm_id']  = subject_timestamp_df.apply(
         lambda x: hadm_id_for_subject_overlapping_time(x.subject_id, x.timestamp), axis=1)
 print("Got hadm_ids in %d seconds" % (time.time() - start_time))
 print()    
-print(subject_timestamp_df.head())
+print(subject_timestamp_df)
 print(subject_timestamp_df.shape)
 
 print("Now aggregating dfs")
