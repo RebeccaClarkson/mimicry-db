@@ -4,9 +4,10 @@ As access to the MIMIC III database is restricted, this python package uses fake
 
 ## Instructions for Initialization:
 1. Create a Docker container via ```bash container/run.sh```
-2. Then, once you are within the docker container: ```source shared/first_time_only.sh``` 
+2. Then, once you are within the docker container: ```source shared/start_session.sh``` 
      * Adds analysis/shared/ to PYTHONPATH
      * Starts postgres
+3. Finally, ```source shared/first_time_only.sh```
      * Loads the mimic db into postgres from csv files
      * Adds a column to the patients table (<i>has_matched_waveform</i>) to indicate whether a given patient has an associated waveform.
 
@@ -14,5 +15,3 @@ As access to the MIMIC III database is restricted, this python package uses fake
 1. Start the docker container: ```docker start mimicry_db```
 2. Attach to the container: ```docker attach mimicry_db```
 3. Source the bash script to start the session ```source shared/start_session.sh```
-     * Adds analysis/shared/ to PYTHONPATH
-     * Starts postgres
