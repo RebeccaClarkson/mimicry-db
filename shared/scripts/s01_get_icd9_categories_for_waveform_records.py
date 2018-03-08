@@ -59,6 +59,7 @@ print(df.shape)
 # Drop all possible duplicates
 df = drop_duplicates_and_reset_index(df)
 print(df.shape)
+print(df)
 
 df['disease_category'] = pd.Series(df.apply(
         lambda row: get_diagnosis_from_icd9_string(row.icd9_code), axis=1))
