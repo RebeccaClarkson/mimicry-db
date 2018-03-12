@@ -15,3 +15,5 @@ As access to the MIMIC III database is restricted, this python package uses fake
 1. Start the docker container: ```docker start mimicry_db```
 2. Attach to the container: ```docker attach mimicry_db```
 3. Source the bash script to start the session ```source shared/start_session.sh```
+
+Copyright 2018, Rebecca L. Clarkson. All rights reserved.
