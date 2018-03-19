@@ -15,12 +15,13 @@ full_df = full_df[(full_df.disease_category.isin(numeric_categories))]
 
 # Plot # diagnoses per patient 
 df_no_filenames = drop_duplicates_and_reset_index(full_df.drop(['filename'], axis=1))
-grouped = df_no_filenames['icd9_code'].groupby(df_no_filenames['hadm_id']).count()
+grouped_by_icd9_code = df_no_filenames['icd9_code'].groupby(df_no_filenames['hadm_id']).count()
 
 plt.figure()
 ax = plt.subplot(111)
-grouped.hist(color='red', bins=list(range(0, int(max(grouped+1)), 1)), align='left')
-ax.set_xlabel('number of icd9 codes'); ax.set_ylabel('count')
+grouped_by_icd9_code.hist(color='red', align='left')
+ax.set_xlabel('number of icd9 codes') 
+ax.set_ylabel('count')
 simplify_borders(ax)
 plt.savefig(script_output_path+ 's02_number_of_icd9_codes_full_df.png', bbox_inches="tight")
 
@@ -39,13 +40,19 @@ def pivot_diagnosis_df(df):
         aggfunc=np.sum
         )
 
+# Get information on disease categories 
 primary_diagnoses_df_pivot_full = pivot_diagnosis_df(primary_diagnoses_full_df) 
+disease_categories = primary_diagnoses_df_pivot_full.sum().sort_values()
+
+# Isolate male and female patients into separate dataframes
+age_and_gender_df = full_df[['hadm_id', 'age_at_admission', 'gender']].drop_duplicates()
+males_df = age_and_gender_df[(age_and_gender_df.gender == 'M')]
+females_df = age_and_gender_df[(age_and_gender_df.gender == 'F')]
 
 # Plot disease categories for primary diagnosis
 plt.figure()
 ax = plt.subplot(111)
-data = primary_diagnoses_df_pivot_full.sum().sort_values()
-data.plot.barh(width=.9, color=sns.xkcd_rgb['light blue'])
+disease_categories.plot.barh(width=.9, color=sns.xkcd_rgb['light blue'])
 
 ax.set_ylabel('')
 ax.set_xlabel('count')
@@ -54,11 +61,6 @@ plt.tight_layout()
 plt.savefig(script_output_path+ 's02_disease_category.png', bbox_inches='tight')
 
 # Plot age and gender
-plt.figure()
-ax = plt.subplot(111)
-age_and_gender_df = full_df[['hadm_id', 'age_at_admission', 'gender']].drop_duplicates()
-males_df = age_and_gender_df[(age_and_gender_df.gender == 'M')]
-females_df = age_and_gender_df[(age_and_gender_df.gender == 'F')]
 
 plt.figure()
 ax = plt.subplot(111)
@@ -66,7 +68,7 @@ bins = list(range(0, 110, 10))
 males_df['age_at_admission'].hist(color=sns.xkcd_rgb['light red'], bins=bins)
 females_df['age_at_admission'].hist(color=sns.xkcd_rgb['light green'], bins=bins)
 
-ax.legend(['Male', 'Female'])
+ax.legend(['Male', 'Female'], loc='upper left')
 ax.set_xlabel('age at admission (years)'); ax.set_ylabel('count')
 ax.set_xlim([0, 80])
 simplify_borders(ax)
