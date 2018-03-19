@@ -23,7 +23,7 @@ Currently, I have written two scripts for initial data exploration and visualiza
     * This is output to a ```.pkl``` file that is then read by ```s02_visualization_of_demographics.py``` (when using the real data, running this script can take several minutes).
 
 * ```s02_visualization_of_demographics.py``` 
-    * This script loads the df that was generated in ```s01``` and generates a few helpful visualizations of the data:
+    * This script loads the df that was generated in ```s01``` and generates a few helpful visualizations of the data (here shown with aggregated data from real MIMIC db):
 <img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_age_and_gender_at_admission.png" align="center" height="200" ></a>
 <img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_number_of_icd9_codes_full_df.png" align="center" height="200" ></a>
 <img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_disease_category.png" align="center" height="200" ></a>
