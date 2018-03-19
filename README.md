@@ -19,6 +19,6 @@ As access to the MIMIC III database is restricted, this python package uses fake
 ## Example Usage:
 Currently, I have written two scripts (s01, s02) for initial data exploration and visualization, both within ```shared/scripts/``` - the output for both of these automatically goes to ```shared/scripts/output/```.
 
-<a href="url"><img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_age_and_gender_at_admission.png" align="center" height="300" ></a>
+<img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_age_and_gender_at_admission.png" align="center" height="300" ></a>
 
 Copyright 2018, Rebecca L. Clarkson. All rights reserved.
