@@ -18,7 +18,14 @@ As access to the MIMIC III database is restricted, this python package uses fake
 
 ## Example Usage:
 Currently, I have written two scripts (s01, s02) for initial data exploration and visualization, both within ```shared/scripts/``` - the output for both of these automatically goes to ```shared/scripts/output/```.
+* ```s01_get_icd9_categories_for_waveform_records.py```
+    * This script creates a pandas df with diagnostic and admission information for all patient admissions that have an associated waveform record.  
+    * This is output to a ```.pkl``` file that is then read by ```s02_visualization_of_demographics.py``` (when using the real data, running this script can take several minutes).
 
-<img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_age_and_gender_at_admission.png" align="center" height="300" ></a>
+* ```s02_visualization_of_demographics.py``` 
+    * This script loads the df that was generated in ```s01``` and generates a few helpful visualizations of the data:
+<img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_age_and_gender_at_admission.png" align="center" height="200" ></a>
+<img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_number_of_icd9_codes_full_df.png" align="center" height="200" ></a>
+<img src="https://github.com/RebeccaClarkson/mimicry-db/blob/master/docs/output/s02_disease_category.png" align="center" height="200" ></a>
 
 Copyright 2018, Rebecca L. Clarkson. All rights reserved.
