@@ -17,7 +17,7 @@ As access to the MIMIC III database is restricted, this python package uses fake
 3. Source the bash script to start the session ```source shared/start_session.sh```
 
 ## Example Usage:
-Currently, I have written two scripts (s01, s02) for initial data exploration and visualization, both within ```shared/scripts/``` - the output for both of these automatically goes to ```shared/scripts/output/```.
+Currently, I have written two scripts for initial data exploration and visualization, both within ```shared/scripts/``` - the output for both of these automatically goes to ```shared/scripts/output/```.
 * ```s01_get_icd9_categories_for_waveform_records.py```
     * This script creates a pandas df with diagnostic and admission information for all patient admissions that have an associated waveform record.  
     * This is output to a ```.pkl``` file that is then read by ```s02_visualization_of_demographics.py``` (when using the real data, running this script can take several minutes).
