@@ -1,4 +1,5 @@
-## File structure that contains the fake mimic db data
+# Instructions for loading real MIMIC database into this package
+
 Fake data is within these folders of the module:
 ```
 ├── data
@@ -10,8 +11,6 @@ Fake data is within these folders of the module:
 │   └── waveform_data
 │       ├── MIMIC-III_Matched_Summary_data.csv
 ```
-
-## Instructions for overwriting fake data
 
 * Overwrite <i> ADMISSIONS.csv, DIAGNOSES_ICD.csv, D_ICD_DIAGNOSES.csv, </i> and <i> PATIENTS.csv </i> with data from the real MIMIC db. 
 
